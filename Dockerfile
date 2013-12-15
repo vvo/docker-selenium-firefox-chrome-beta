@@ -20,4 +20,4 @@ RUN chown chromeuser /home/chromeuser/chrome
 RUN chgrp chromeuser /home/chromeuser/chrome
 ADD ./scripts/ /home/root/scripts
 EXPOSE 4444 5999
-CMD ["sh", "/home/root/scripts/start.sh"]
+ENTRYPOINT ["sh", "/home/root/scripts/start.sh"]
