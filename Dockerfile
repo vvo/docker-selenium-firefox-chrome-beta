@@ -12,7 +12,7 @@ RUN apt-get update -y
 RUN mkdir -p /usr/share/desktop-directories
 RUN apt-get install -y -q firefox google-chrome-beta openjdk-7-jre-headless nodejs
 RUN apt-get install -y -q x11vnc xvfb
-RUN npm install -g selenium-standalone@2.38.0-2.7.0
+RUN npm install -g selenium-standalone@2.43.1-2.9.0
 RUN apt-get install -y -q xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
 RUN useradd -d /home/chromeuser -m chromeuser
 RUN mkdir -p /home/chromeuser/chrome
