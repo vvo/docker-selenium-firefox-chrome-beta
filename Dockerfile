@@ -1,4 +1,8 @@
 FROM stackbrew/ubuntu:saucy
+ENV LC_ALL C
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBCONF_NONINTERACTIVE_SEEN true
+
 MAINTAINER Vincent Voyer <vincent@zeroload.net>
 RUN apt-get -y update
 RUN apt-get install -y -q software-properties-common wget
