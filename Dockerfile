@@ -24,7 +24,6 @@ RUN apt-get install -y -q \
   xfonts-cyrillic
 RUN useradd -d /home/seleuser -m seleuser
 RUN mkdir -p /home/seleuser/chrome
-#RUN mkdir -p /home/seleuser/.pki/nssdb
 RUN chown -R seleuser /home/seleuser
 RUN chgrp -R seleuser /home/seleuser
 # fix https://code.google.com/p/chromium/issues/detail?id=318548
