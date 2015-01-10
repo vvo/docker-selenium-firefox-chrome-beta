@@ -29,6 +29,6 @@ RUN chgrp -R seleuser /home/seleuser
 # fix https://code.google.com/p/chromium/issues/detail?id=318548
 RUN mkdir -p /usr/share/desktop-directories
 ADD ./scripts/ /home/root/scripts
-RUN npm install -g selenium-standalone@2.43.1-5
+RUN npm install -g selenium-standalone@3.0.2 && selenium-standalone install
 EXPOSE 4444 5999
 ENTRYPOINT ["sh", "/home/root/scripts/start.sh"]
