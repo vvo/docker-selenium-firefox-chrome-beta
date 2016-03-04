@@ -8,7 +8,7 @@ RUN apt-get -y update
 RUN apt-get install -y -q software-properties-common wget
 RUN add-apt-repository -y ppa:mozillateam/firefox-next
 
-RUN wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
+RUN wget -qO- https://deb.nodesource.com/setup_5.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -31,9 +31,9 @@ RUN chown -R seleuser /home/seleuser
 RUN chgrp -R seleuser /home/seleuser
 
 ADD ./scripts/ /home/root/scripts
-RUN npm i -g \
-  selenium-standalone \
-  phantomjs-prebuilt && \
+RUN npm install -g \
+  selenium-standalone@5.0.0 \
+  phantomjs-prebuilt@2.1.4 && \
   selenium-standalone install
 EXPOSE 4444 5999
 ENTRYPOINT ["sh", "/home/root/scripts/start.sh"]
